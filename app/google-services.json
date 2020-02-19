@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "314492248771",
+    "firebase_url": "https://lapitchatapp-3bf33.firebaseio.com",
+    "project_id": "lapitchatapp-3bf33",
+    "storage_bucket": "lapitchatapp-3bf33.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314492248771:android:7e210514cc06537a027876",
+        "android_client_info": {
+          "package_name": "com.asifahmedsohan.quizapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314492248771-3o2ig2vs4oh8hlrbajqbmp64a7uq7lce.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdaxyNhQAQuPPe_D44Jmus2fri5IOnmus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314492248771-3o2ig2vs4oh8hlrbajqbmp64a7uq7lce.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
