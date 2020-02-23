@@ -7,16 +7,24 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 
 public class ListFragment extends Fragment {
 
     private RecyclerView listView;
+    private QuizListViewModel quizListViewModel;
+
+    private QuizListAdapter quizListAdapter;
 
 
     @Override
@@ -31,6 +39,24 @@ public class ListFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         listView = view.findViewById(R.id.list_view);
+        quizListAdapter = new QuizListAdapter();
 
+        listView.setLayoutManager(new LinearLayoutManager(getContext()));
+        listView.setHasFixedSize(true);
+        listView.setAdapter(quizListAdapter);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        quizListViewModel = new ViewModelProvider(getActivity()).get(QuizListViewModel.class);
+        quizListViewModel.getQuizListModelData().observe(getViewLifecycleOwner(), new Observer<List<QuizListModel>>() {
+            @Override
+            public void onChanged(List<QuizListModel> quizListModelList) {
+                quizListAdapter.setQuizListModels(quizListModelList);
+                quizListAdapter.notifyDataSetChanged();
+            }
+        });
     }
 }

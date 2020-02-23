@@ -7,12 +7,12 @@ public class QuizListModel {
     @DocumentId
     private String quiz_id;
     private String name,desc,level,image,visibility;
-    private int questions;
+    private long questions;
 
     public QuizListModel() {
     }
 
-    public QuizListModel(String name, String desc, String level, String image, String visibility, int questions) {
+    public QuizListModel(String name, String desc, String level, String image, String visibility, long questions) {
         this.name = name;
         this.desc = desc;
         this.level = level;
@@ -61,7 +61,7 @@ public class QuizListModel {
         this.visibility = visibility;
     }
 
-    public int getQuestions() {
+    public long getQuestions() {
         return questions;
     }
 
